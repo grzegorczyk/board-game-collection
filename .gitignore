@@ -1,0 +1,10 @@
+###> os ###
+*~
+.DS_Store
+###< os ###
+
+###> ide ###
+.idea/*
+.php-version
+php.ini
+###< ide ###
