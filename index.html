@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/app.css">
+    <title>board game list</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-config" content="/images/browserconfig.xml">
+    <meta name="theme-color" content="#000000">
+</head>
+<body>
+<div id="games-list">
+
+    <h1><p>board </p>game <br>list</h1>
+
+    <input class="search" placeholder="search"/> <a class="randombutton" href="random.html">random game</a>
+
+    <div class="badgeWrapper">
+        <div class="badge badgePrivateRatingCount-1">1-3</div>
+        <div class="badge badgePrivateRatingCount-4">4-5</div>
+        <div class="badge badgePrivateRatingCount-6">6-7</div>
+        <div class="badge badgePrivateRatingCount-8">8-9</div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th><span class="sort" data-sort="name">Name &#x25b4;&#x25be;</span></th>
+                <th colspan="2"><span class="sort" data-sort="maxPlayer">Player &#x25b4;&#x25be;</span></th>
+                <th><span class="sort" data-sort="duration">Duration &#x25b4;&#x25be;</span></th>
+                <th>Rating</th>
+                <th><span class="sort" data-sort="bggRating">BGG<br>Rating &#x25b4;&#x25be;</span></th>
+                <th>BGG Link</th>
+                <th>Place</th>
+            </tr>
+        </thead>
+        <tbody id="table-body" class="list">
+
+        </tbody>
+    </table>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+<script src="script/app.js"></script>
+</body>
+</html>

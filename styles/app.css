@@ -1,0 +1,234 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
+:root {
+  --sunset-yellow: #FCBB6D;
+  --old-rose: #D8737F;
+  --delicate-mauve: #AB6C82;
+  --dusk-gray: #685D79;
+  --mist-blue: #475C7A;
+  --gray: #808080;
+  --orange: #FCBB6D;
+  --blue: #487eb0;
+  --green: #A3CB38;
+}
+
+a {
+  color: white;
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 1.1;
+  font-weight: 900;
+}
+h1 p {
+  display: block;
+  margin: 0;
+  line-height: 0.3;
+}
+
+body {
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  background-color: black;
+  color: white;
+  font-size: 0.85rem;
+}
+
+#games-list {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+#games-list table {
+  border-collapse: collapse;
+}
+#games-list table thead tr th {
+  text-align: left;
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid var(--delicate-mauve);
+}
+#games-list table tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#games-list table tbody tr td {
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid white;
+}
+#games-list table tbody tr td.disable {
+  opacity: 0.2;
+}
+#games-list table tbody tr td.disable a {
+  pointer-events: none;
+}
+#games-list table tbody tr td.name {
+  font-weight: 600;
+}
+#games-list table tbody tr td.minPlayer {
+  text-align: right;
+  padding-right: 0;
+}
+#games-list table tbody tr td.minPlayer:after {
+  display: inline-block;
+  content: "-";
+  padding-left: 0.25rem;
+}
+
+input,
+button,
+select,
+.randombutton {
+  -moz-appearance: textfield;
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  border: 0;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+input[type=number],
+button[type=number],
+select[type=number],
+.randombutton[type=number] {
+  width: 3rem;
+}
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button,
+button::-webkit-outer-spin-button,
+button::-webkit-inner-spin-button,
+select::-webkit-outer-spin-button,
+select::-webkit-inner-spin-button,
+.randombutton::-webkit-outer-spin-button,
+.randombutton::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input:focus,
+button:focus,
+select:focus,
+.randombutton:focus {
+  outline: none;
+}
+
+.gamePlaceWrapper {
+  position: relative;
+}
+.gamePlaceWrapper select {
+  padding: 0.5rem 2rem 0.5rem 0.5rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+  position: relative;
+}
+.gamePlaceWrapper:after {
+  position: absolute;
+  top: 0;
+  right: 23px;
+  display: flex;
+  width: 15px;
+  height: 100%;
+  content: "↓";
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+button, .randombutton {
+  color: black;
+  background-color: white;
+  margin-left: 0;
+  text-decoration: none;
+}
+
+#randomWrapper {
+  width: 100vw;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+
+.btnWrapper {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+#selectedGame b {
+  margin-bottom: 0.75rem;
+  display: block;
+  font-size: 1.75rem;
+}
+
+.badge {
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  max-width: 1rem;
+  font-weight: 600;
+}
+.badge.badgePrivateRatingCount-1 {
+  background-color: var(--gray);
+  color: color-mix(in srgb, var(--gray), #000 80%);
+}
+.badge.badgePrivateRatingCount-2 {
+  background-color: var(--gray);
+  color: color-mix(in srgb, var(--gray), #000 80%);
+}
+.badge.badgePrivateRatingCount-3 {
+  background-color: var(--gray);
+  color: color-mix(in srgb, var(--gray), #000 80%);
+}
+.badge.badgePrivateRatingCount-4 {
+  background-color: var(--orange);
+  color: color-mix(in srgb, var(--orange), #000 80%);
+}
+.badge.badgePrivateRatingCount-5 {
+  background-color: var(--orange);
+  color: color-mix(in srgb, var(--orange), #000 80%);
+}
+.badge.badgePrivateRatingCount-6 {
+  background-color: var(--blue);
+  ccolor: color-mix(in srgb, var(--blue), #000 80%);
+}
+.badge.badgePrivateRatingCount-7 {
+  background-color: var(--blue);
+  ccolor: color-mix(in srgb, var(--blue), #000 80%);
+}
+.badge.badgePrivateRatingCount-8 {
+  background-color: var(--green);
+  color: color-mix(in srgb, var(--green), #000 80%);
+}
+.badge.badgePrivateRatingCount-9 {
+  background-color: var(--green);
+  color: color-mix(in srgb, var(--green), #000 80%);
+}
+
+.badgeWrapper {
+  margin: 1rem 0;
+  display: flex;
+  gap: 0.5rem;
+}
+.badgeWrapper .badge {
+  max-width: none;
+}
+
+/*# sourceMappingURL=app.css.map */

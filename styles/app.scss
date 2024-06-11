@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+
+
+:root {
+  --sunset-yellow: #FCBB6D;
+  --old-rose: #D8737F;
+  --delicate-mauve: #AB6C82;
+  --dusk-gray: #685D79;
+  --mist-blue: #475C7A;
+  --gray: #808080;
+  --orange: #FCBB6D;
+  --blue: #487eb0;
+  --green: #A3CB38;
+}
+
+
+a {
+  color: white;
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 1.1;
+  font-weight: 900;
+
+  p {
+    display: block;
+    margin: 0;
+    line-height: .3;
+  }
+}
+
+body {
+  //background-color: var(--mist-blue);
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  background-color: black;
+  color: white;
+  font-size: .85rem;
+}
+
+#games-list {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+
+  table {
+    border-collapse: collapse;
+
+    thead {
+      tr {
+
+        th {
+          text-align: left;
+          padding: .5rem .25rem;
+          border-bottom: 1px solid var(--delicate-mauve);
+        }
+      }
+
+    }
+
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          background-color: rgba(255,255,255,.1);
+        }
+
+        td {
+          padding: .5rem .25rem;
+          border-bottom: 1px solid white;
+
+          &.disable {
+            opacity: .2;
+
+            a {
+              pointer-events: none;
+            }
+          }
+
+          &.name {
+            font-weight: 600;
+          }
+
+          &.minPlayer {
+            text-align: right;
+            padding-right: 0;
+
+            &:after {
+              display: inline-block;
+              content: "-";
+              padding-left: .25rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+input,
+button,
+select,
+.randombutton {
+  -moz-appearance: textfield;
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  border: 0;
+  text-align: center;
+  padding: .5rem 1rem;
+  border-radius: 40px;
+  font-size: 1.5rem;
+  margin: .5rem;
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+
+  &[type=number] {
+    width: 3rem;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.gamePlaceWrapper {
+  position: relative;
+
+  select {
+    padding: .5rem 2rem .5rem .5rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    position: relative;
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 23px;
+    display: flex;
+    width: 15px;
+    height: 100%;
+    content: "↓";
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+}
+
+button,.randombutton  {
+  color: black;
+  background-color: white;
+  margin-left: 0;
+  text-decoration: none;
+}
+
+#randomWrapper {
+  width: 100vw;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+
+.btnWrapper {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+#selectedGame {
+  b {
+    margin-bottom: .75rem;
+    display: block;
+    font-size: 1.75rem;
+  }
+}
+
+.badge {
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .25rem .5rem;
+  max-width: 1rem;
+  font-weight: 600;
+
+  @for $i from 1 through 9 {
+    &.badgePrivateRatingCount-#{$i} {
+      @if $i >= 1 and $i <= 3 {
+        background-color: var(--gray);
+        color: color-mix(in srgb,var(--gray),#000 80%);
+      }
+      @else if $i >= 4 and $i <= 5 {
+        background-color: var(--orange);
+        color: color-mix(in srgb,var(--orange),#000 80%);
+      }
+      @else if $i >= 6 and $i <= 7 {
+        background-color: var(--blue);
+        ccolor: color-mix(in srgb,var(--blue),#000 80%);
+      }
+      @else if $i >= 8 and $i <= 9 {
+        background-color: var(--green);
+        color: color-mix(in srgb,var(--green),#000 80%);
+      }
+    }
+  }
+}
+
+.badgeWrapper {
+  margin: 1rem 0;
+  display: flex;
+  gap: .5rem;
+
+  .badge {
+    max-width: none;
+  }
+}
