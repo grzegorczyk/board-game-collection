@@ -7,7 +7,7 @@
   --delicate-mauve: #AB6C82;
   --dusk-gray: #685D79;
   --mist-blue: #475C7A;
-  --gray: #808080;
+  --gray: #D8737F;
   --orange: #FCBB6D;
   --blue: #487eb0;
   --green: #A3CB38;
@@ -176,50 +176,32 @@ button, .randombutton {
   font-size: 1.75rem;
 }
 
-.badge {
-  border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.25rem 0.5rem;
-  max-width: 1rem;
-  font-weight: 600;
-}
 .badge.badgePrivateRatingCount-1 {
-  background-color: var(--gray);
-  color: color-mix(in srgb, var(--gray), #000 80%);
+  color: var(--gray);
 }
 .badge.badgePrivateRatingCount-2 {
-  background-color: var(--gray);
-  color: color-mix(in srgb, var(--gray), #000 80%);
+  color: var(--gray);
 }
 .badge.badgePrivateRatingCount-3 {
-  background-color: var(--gray);
-  color: color-mix(in srgb, var(--gray), #000 80%);
+  color: var(--gray);
 }
 .badge.badgePrivateRatingCount-4 {
-  background-color: var(--orange);
-  color: color-mix(in srgb, var(--orange), #000 80%);
+  color: var(--orange);
 }
 .badge.badgePrivateRatingCount-5 {
-  background-color: var(--orange);
-  color: color-mix(in srgb, var(--orange), #000 80%);
+  color: var(--orange);
 }
 .badge.badgePrivateRatingCount-6 {
-  background-color: var(--blue);
-  ccolor: color-mix(in srgb, var(--blue), #000 80%);
+  color: var(--blue);
 }
 .badge.badgePrivateRatingCount-7 {
-  background-color: var(--blue);
-  ccolor: color-mix(in srgb, var(--blue), #000 80%);
+  color: var(--blue);
 }
 .badge.badgePrivateRatingCount-8 {
-  background-color: var(--green);
-  color: color-mix(in srgb, var(--green), #000 80%);
+  color: var(--green);
 }
 .badge.badgePrivateRatingCount-9 {
-  background-color: var(--green);
-  color: color-mix(in srgb, var(--green), #000 80%);
+  color: var(--green);
 }
 
 .badgeWrapper {

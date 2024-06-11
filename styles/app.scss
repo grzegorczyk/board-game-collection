@@ -8,7 +8,7 @@
   --delicate-mauve: #AB6C82;
   --dusk-gray: #685D79;
   --mist-blue: #475C7A;
-  --gray: #808080;
+  --gray: #D8737F;
   --orange: #FCBB6D;
   --blue: #487eb0;
   --green: #A3CB38;
@@ -196,31 +196,27 @@ button,.randombutton  {
 }
 
 .badge {
-  border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: .25rem .5rem;
-  max-width: 1rem;
-  font-weight: 600;
-
   @for $i from 1 through 9 {
     &.badgePrivateRatingCount-#{$i} {
       @if $i >= 1 and $i <= 3 {
-        background-color: var(--gray);
-        color: color-mix(in srgb,var(--gray),#000 80%);
+        color: var(--gray);
+        //background-color: var(--gray);
+        //color: color-mix(in srgb,var(--gray),#000 80%);
       }
       @else if $i >= 4 and $i <= 5 {
-        background-color: var(--orange);
-        color: color-mix(in srgb,var(--orange),#000 80%);
+        color: var(--orange);
+        //background-color: var(--orange);
+        //color: color-mix(in srgb,var(--orange),#000 80%);
       }
       @else if $i >= 6 and $i <= 7 {
-        background-color: var(--blue);
-        ccolor: color-mix(in srgb,var(--blue),#000 80%);
+        color: var(--blue);
+        //background-color: var(--blue);
+        //ccolor: color-mix(in srgb,var(--blue),#000 80%);
       }
       @else if $i >= 8 and $i <= 9 {
-        background-color: var(--green);
-        color: color-mix(in srgb,var(--green),#000 80%);
+        color: var(--green);
+        //background-color: var(--green);
+        //color: color-mix(in srgb,var(--green),#000 80%);
       }
     }
   }

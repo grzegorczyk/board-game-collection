@@ -12,8 +12,8 @@ function erstesSkript(callback) {
                 <td class="minPlayer ${!game.minPlayer ? 'disable' : ''}">${game.minPlayer ? game.minPlayer : 'na'}</td>
                 <td class="maxPlayer ${!game.maxPlayer ? 'disable' : ''}">${game.maxPlayer ? game.maxPlayer : 'na'}</td>
                 <td class="duration ${!game.duration ? 'disable' : ''}">${game.duration ? game.duration : 'na'}</td>
-                <td class="privateRating ${!game.privateRating ? 'disable' : ''}"><div class="badge badgePrivateRatingCount-${game.privateRatingCount ? game.privateRatingCount : 'na'}">${game.privateRating ? game.privateRating : 'na'}</div></td>
-                <td class="bggRating ${!game.bggRating ? 'disable' : ''}">${game.bggRating ? game.bggRating : 'na'}</td>
+                <td class="privateRating ${!game.privateRating ? 'disable' : ''} badge badgePrivateRatingCount-${game.privateRatingCount ? game.privateRatingCount : 'na'}">${game.privateRating ? game.privateRating : '0'}</td>
+                <td class="bggRating ${!game.bggRating ? 'disable' : ''}">${game.bggRating ? game.bggRating : '0'}</td>
                 <td class="bggLink ${!game.bggLink ? 'disable' : ''}"><a href="${game.bggLink}" title="${game.name ? game.name : 'na'} on BGG">Link</a></td>
                 <td class="place ${!game.place ? 'disable' : ''}">${game.place ? game.place : 'na'}</td>
             `;
@@ -80,7 +80,7 @@ function selectGame() {
     var selectedPlace = document.getElementById("gamePlace").value;
     loadJSON(function(gamesData) {
         var selectedGame = chooseGame(gamesData, numPlayers, selectedPlace);
-        document.getElementById("selectedGame").innerHTML = "the random game for " + numPlayers + " players is:<br><br> <b>" + selectedGame.name + "</b>" + selectedGame.minPlayer + " - " + selectedGame.maxPlayer + " player<br>" + selectedGame.duration + " min<br>" + selectedGame.bggRating + " bgg rating<br><a href='" + selectedGame.bggLink + "' target='_blank'>bgg link</a><br>at " + selectedGame.place;
+        document.getElementById("selectedGame").innerHTML = "the random game for " + numPlayers + " players is:<br><br> <b>" + selectedGame.name + "</b>" + selectedGame.minPlayer + " - " + selectedGame.maxPlayer + " player<br>" + selectedGame.duration + " min<br>" + selectedGame.privateRating + " rating<br>" + selectedGame.bggRating + " bgg rating<br><a href='" + selectedGame.bggLink + "' target='_blank'>bgg link</a><br>at " + selectedGame.place;
     });
 }
 
