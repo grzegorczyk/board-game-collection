@@ -29,7 +29,10 @@
         <div class="badge badgePrivateRatingCount-8">8-9</div>
     </div>
 
-    <table>
+    <input type="number" id="filterInput" placeholder="Zahl eingeben">
+    <button onclick="filterTable()">Filtern</button>
+
+    <table id="mainTable">
         <thead>
             <tr>
                 <th>#</th>

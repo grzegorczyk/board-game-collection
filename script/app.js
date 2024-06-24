@@ -40,6 +40,58 @@ function zweitesSkript() {
 // Aufruf des ersten Skripts mit einer Callback-Funktion
 erstesSkript(zweitesSkript);
 
+function filterTable() {
+    // Holen Sie den Eingabewert
+    var input = document.getElementById("filterInput").value;
+    var filterValue = parseInt(input, 10);
+
+    // Update the URL with the filter value
+    var newUrl = new URL(window.location.href);
+    newUrl.searchParams.set('filter', filterValue);
+    window.history.pushState({}, '', newUrl);
+
+    applyFilter(filterValue);
+}
+
+function applyFilter(filterValue) {
+    // Holen Sie die Tabelle und die Zeilen
+    var table = document.getElementById("mainTable");
+    var tr = table.getElementsByTagName("tr");
+
+    // Iteriere über alle Tabellenzeilen (außer der Kopfzeile)
+    for (var i = 1; i < tr.length; i++) {
+        var tdMin = tr[i].getElementsByClassName("minPlayer")[0];
+        var tdMax = tr[i].getElementsByClassName("maxPlayer")[0];
+
+        if (tdMin && tdMax) {
+            var minValue = parseInt(tdMin.textContent || tdMin.innerText, 10);
+            var maxValue = parseInt(tdMax.textContent || tdMax.innerText, 10);
+
+            // Überprüfen, ob die Zeile angezeigt werden soll
+            if (filterValue >= minValue && filterValue <= maxValue) {
+                tr[i].style.display = "";  // Zeige die Zeile
+            } else {
+                tr[i].style.display = "none";  // Verstecke die Zeile
+            }
+        }
+    }
+}
+
+function getFilterFromUrl() {
+    var urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('filter');
+}
+
+// Beim Laden der Seite den Filter anwenden
+window.onload = function() {
+    var filterValue = getFilterFromUrl();
+    if (filterValue) {
+        document.getElementById("filterInput").value = filterValue;
+        applyFilter(parseInt(filterValue, 10));
+    }
+};
+
+
 // Funktion zum Laden einer externen JSON-Datei
 function loadJSON(callback) {
     var xobj = new XMLHttpRequest();
